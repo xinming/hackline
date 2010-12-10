@@ -13,6 +13,7 @@
     %th
     %th
     %th
+    %th
 
   - @tasks.each do |task|
     %tr
@@ -20,8 +21,8 @@
       %td= task.user
       %td= task.done
       %td= task.deadline
-      %td= task.started
-      %td= task.completed_on
+      %td= task.started ? task.started.nice_datetime : "Not started."
+      %td= task.completed_on ? task.completed_on.nice_datetime : "Not completed."
       %td
         - if task.assigned_users.size > 0
           %ul
@@ -29,6 +30,11 @@
               %li= user
         - else
           No users assigned
+
+      - if task.started
+        %td= link_to 'Unstart!', unstart_tasklist_task_url(task.tasklist, task), :method => :put   
+      - else
+        %td= link_to 'Start!', start_tasklist_task_url(task.tasklist, task), :method => :put 
 
       - if task.done
         %td= link_to 'Mark as Undone!', undone_tasklist_task_url(task.tasklist, task), :method => :put   

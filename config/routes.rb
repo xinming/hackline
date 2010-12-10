@@ -5,6 +5,8 @@ Hackline::Application.routes.draw do
   resources :tasklists do
     resources :tasks do
       member do
+        put 'start'
+        put 'unstart'
         put 'done'
         put 'undone'
       end
