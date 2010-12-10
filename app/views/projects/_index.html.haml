@@ -1,0 +1,31 @@
+%h1 Listing projects
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Deadline
+    %th Done
+    %th Completed on
+    %th Active
+    %th
+    %th
+    %th
+    %th
+
+  - @projects.each do |project|
+    %tr
+      %td= project.name
+      %td= project.description
+      %td= project.deadline
+      %td= project.done
+      %td= project.completed_on
+      %td= project.active
+      %td= link_to "(Tasklists)", project_tasklists_url(project)
+      %td= link_to 'Show', project
+      %td= link_to 'Edit', edit_project_path(project)
+      %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Project', new_project_path
