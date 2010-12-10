@@ -1,0 +1,21 @@
+%h1 Listing task_assignments
+
+%table
+  %tr
+    %th Task
+    %th User
+    %th
+    %th
+    %th
+
+  - @task_assignments.each do |task_assignment|
+    %tr
+      %td= task_assignment.task
+      %td= task_assignment.user
+      %td= link_to 'Show', task_assignment
+      %td= link_to 'Edit', edit_task_assignment_path(task_assignment)
+      %td= link_to 'Destroy', task_assignment, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Task assignment', new_task_assignment_path

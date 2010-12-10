@@ -2,26 +2,30 @@
 
 %table
   %tr
-    %th Tasklist
     %th Body
     %th User
     %th Done
     %th Deadline
     %th Started
     %th Completed on
+    %th Assigned Users
     %th
     %th
     %th
 
   - @tasks.each do |task|
     %tr
-      %td= task.tasklist
       %td= task.body
       %td= task.user
       %td= task.done
       %td= task.deadline
       %td= task.started
       %td= task.completed_on
+      - if task.assigned_users.size > 0
+      %td
+        %ul
+          - task.assigned_users.each do |user|
+            %li= user
       %td= link_to 'Show', resource_url(task)
       %td= link_to 'Edit', edit_resource_url(task)
       %td= link_to 'Destroy', resource_url(task), :confirm => 'Are you sure?', :method => :delete
