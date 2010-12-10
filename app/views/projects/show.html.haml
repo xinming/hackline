@@ -19,6 +19,15 @@
   %b Active:
   = @project.active
 
+%hr/
+
+%p
+  %b Tasklists
+  %br/
+  %ul
+    - @project.tasklists.each do |tasklist|
+      %li= link_to "#{tasklist.name}", project_tasklist_url(tasklist)
+
 = link_to 'Edit', edit_project_path(@project)
 \|
 = link_to 'Back', projects_path
