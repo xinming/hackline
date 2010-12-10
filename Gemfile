@@ -29,3 +29,21 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+# DGM59 Gemfiles (Added by Mil)
+gem 'inherited_resources'
+gem 'haml'
+gem 'formtastic', "1.1.0.beta"
+gem 'validation_reflection'
+gem 'rmagick', :require => 'RMagick'
+gem 'dragonfly'
+gem 'rack-cache'
+
+gem 'devise'
+gem 'cancan'
+
+group :development do
+  gem 'rails3-generators'
+  gem 'haml-rails'
+  gem 'hpricot'
+end

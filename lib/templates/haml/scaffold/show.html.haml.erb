@@ -1,0 +1,14 @@
+- set_title "<%= singular_name %>: #{resource.name}"
+- set_active_menu :content, :<%= plural_name %>
+
+.show
+<% for attribute in attributes -%>
+  %p.<%= attribute.name %>
+    %b <%= attribute.human_name %>:
+    = @<%= singular_name %>.<%= attribute.name %>
+<% end -%>
+  
+- content_for :actions do
+  %ul
+    %li= link_to(image_tag("icons/pencil32.png") + 'Edit', edit_resource_path(resource), :class => 'button')
+    %li= link_to(image_tag("icons/leftturnarrow32.png") + 'Back', collection_path, :class => 'button')      

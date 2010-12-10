@@ -1,0 +1,23 @@
+- set_title "<%= plural_name %>"
+- set_active_menu :content, :<%= plural_name %>
+
+%table.data
+  %tr
+<% for attribute in attributes -%>
+    %th <%= attribute.human_name %>
+<% end -%>
+    %th
+
+  - @<%= plural_name %>.each do |<%= singular_name %>|
+    %tr
+<% for attribute in attributes -%>
+      %td.<%= attribute.name %>= <%= singular_name %>.<%= attribute.name %>
+<% end -%>
+      %td.actions
+        = link_to(image_tag("icons/search32.png") + 'Show', <%= singular_name %>, :class => 'button')
+        = link_to(image_tag("icons/pencil32.png") + 'Edit', edit_resource_path(<%= singular_name %>), :class => 'button')
+        = link_to(image_tag("icons/stop32.png") + 'Destroy', <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete, :class => 'button')
+
+- content_for :actions do
+  %ul
+    %li= link_to(image_tag("icons/plus32.png") + 'New <%= singular_name %>', new_resource_path, :class => "button")
