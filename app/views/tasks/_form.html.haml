@@ -1,0 +1,10 @@
+= semantic_form_for @task, :url => collection_url do |form|
+  = form.inputs do
+    = form.input :tasklist, :label => 'Tasklist'
+    = form.input :body, :label => 'Body'
+    = form.input :user, :label => 'User'
+    = form.input :done, :label => 'Done'
+    = form.input :deadline, :label => 'Deadline'
+    = form.input :started, :label => 'Started'
+    = form.input :completed_on, :label => 'Completed On'
+  = form.buttons

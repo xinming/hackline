@@ -1,0 +1,32 @@
+%h1 Listing tasks
+
+%table
+  %tr
+    %th Tasklist
+    %th Body
+    %th User
+    %th Done
+    %th Deadline
+    %th Started
+    %th Completed on
+    %th
+    %th
+    %th
+
+  - @tasks.each do |task|
+    %tr
+      %td= task.tasklist
+      %td= task.body
+      %td= task.user
+      %td= task.done
+      %td= task.deadline
+      %td= task.started
+      %td= task.completed_on
+      %td= link_to 'Show', resource_url(task)
+      %td= link_to 'Edit', edit_resource_url(task)
+      %td= link_to 'Destroy', resource_url(task), :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Task', new_resource_url
+= link_to "Back to Tasklist: #{parent.name}", parent_url

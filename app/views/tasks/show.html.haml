@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Tasklist:
+  = @task.tasklist
+%p
+  %b Body:
+  = @task.body
+%p
+  %b User:
+  = @task.user
+%p
+  %b Done:
+  = @task.done
+%p
+  %b Deadline:
+  = @task.deadline
+%p
+  %b Started:
+  = @task.started
+%p
+  %b Completed on:
+  = @task.completed_on
+
+= link_to 'Edit', edit_resource_url(@task)
+\|
+= link_to 'Back', collection_url

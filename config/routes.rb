@@ -1,5 +1,9 @@
 Hackline::Application.routes.draw do
   
+  resources :tasklists do
+    resources :tasks
+  end
+
   resources :projects do
     resources :tasklists
   end

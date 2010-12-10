@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tasklist: 
+  body: MyText
+  user: 
+  done: false
+  deadline: 2010-12-11
+  started: 2010-12-11 01:54:12
+  completed_on: 2010-12-11 01:54:12
+
+two:
+  tasklist: 
+  body: MyText
+  user: 
+  done: false
+  deadline: 2010-12-11
+  started: 2010-12-11 01:54:12
+  completed_on: 2010-12-11 01:54:12
