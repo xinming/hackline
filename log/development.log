@@ -58,3 +58,10 @@ Migrating to CreateProjects (20101210182811)
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2010-12-11 01:29:37 +0700
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+Rendered projects/index.html.haml within layouts/application (7.5ms)
+Completed 200 OK in 116ms (Views: 15.2ms | ActiveRecord: 0.6ms)
