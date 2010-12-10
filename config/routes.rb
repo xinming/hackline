@@ -1,4 +1,6 @@
 Hackline::Application.routes.draw do
+  resources :tasklists
+
   resources :projects
 
   devise_for :users

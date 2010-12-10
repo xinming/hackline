@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Project:
+  = @tasklist.project
+%p
+  %b Name:
+  = @tasklist.name
+%p
+  %b Details:
+  = @tasklist.details
+
+= link_to 'Edit', edit_tasklist_path(@tasklist)
+\|
+= link_to 'Back', tasklists_path
