@@ -25,7 +25,7 @@
   %br/
   %ul
     - @tasklist.tasks.each do |task|
-      %li= link_to "#{task.body}", tasklist_task_url(task)
+      %li= link_to "#{task.body}", tasklist_task_url(@tasklist, task)
 
 = link_to 'Edit', edit_resource_url(@tasklist)
 \|

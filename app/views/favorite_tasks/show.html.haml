@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @favorite_task.user
+%p
+  %b Task:
+  = @favorite_task.task
+
+= link_to 'Edit', edit_favorite_task_path(@favorite_task)
+\|
+= link_to 'Back', favorite_tasks_path

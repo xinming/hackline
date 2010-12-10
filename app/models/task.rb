@@ -8,4 +8,8 @@ class Task < ActiveRecord::Base
   def to_s
     return self.body
   end
+  
+  #Favorite Task
+  has_many :favorite_tasks
+  has_many :favorited_by_users, :through => :favorite_tasks, :source => :user
 end

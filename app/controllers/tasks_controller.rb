@@ -37,4 +37,22 @@ class TasksController < InheritedResources::Base
     resource.save
     redirect_to collection_url, :notice => "Task: #{resource.body} is undone!"
   end
+  
+  #Favorite Feature
+  
+  def favorite
+    unless current_user.favorited_tasks.include?(resource)
+      current_user.favorited_tasks << resource
+      current_user.save
+      redirect_to collection_url, :notice => "Task: #{resource.body} is favorited!"
+    end
+  end
+  
+  def unfavorite
+    if current_user.favorited_tasks.include?(resource)
+      current_user.favorited_tasks.delete resource
+      current_user.save
+      redirect_to collection_url, :notice => "Task: #{resource.body} is unfavorited!"
+    end
+  end
 end

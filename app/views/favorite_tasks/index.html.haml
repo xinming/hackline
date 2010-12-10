@@ -1,0 +1,21 @@
+%h1 Listing favorite_tasks
+
+%table
+  %tr
+    %th User
+    %th Task
+    %th
+    %th
+    %th
+
+  - @favorite_tasks.each do |favorite_task|
+    %tr
+      %td= favorite_task.user
+      %td= favorite_task.task
+      %td= link_to 'Show', favorite_task
+      %td= link_to 'Edit', edit_favorite_task_path(favorite_task)
+      %td= link_to 'Destroy', favorite_task, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Favorite task', new_favorite_task_path

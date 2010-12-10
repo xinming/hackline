@@ -1,6 +1,7 @@
 Hackline::Application.routes.draw do
   
-  resources :task_assignments
+  # resources :favorite_tasks
+  # resources :task_assignments
   
   resources :tasklists do
     resources :tasks do
@@ -9,6 +10,8 @@ Hackline::Application.routes.draw do
         put 'unstart'
         put 'done'
         put 'undone'
+        put 'favorite'
+        put 'unfavorite'
       end
     end
   end

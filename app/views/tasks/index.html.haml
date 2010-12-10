@@ -14,6 +14,7 @@
     %th
     %th
     %th
+    %th
 
   - @tasks.each do |task|
     %tr
@@ -41,6 +42,11 @@
       - else
         %td= link_to 'Mark as Done!', done_tasklist_task_url(task.tasklist, task), :method => :put 
     
+      - unless current_user.favorited_tasks.include?(task)
+        %td= link_to 'Favorite this!', favorite_tasklist_task_url(task.tasklist, task), :method => :put   
+      - else
+        %td= link_to 'Unfavorite this!', unfavorite_tasklist_task_url(task.tasklist, task), :method => :put   
+        
       %td= link_to 'Show', resource_url(task)
       %td= link_to 'Edit', edit_resource_url(task)
       %td= link_to 'Destroy', resource_url(task), :confirm => 'Are you sure?', :method => :delete
