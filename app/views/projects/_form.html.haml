@@ -1,0 +1,9 @@
+= semantic_form_for @project do |form|
+  = form.inputs do
+    = form.input :name, :label => 'Name'
+    = form.input :description, :label => 'Description'
+    = form.input :deadline, :label => 'Deadline'
+    = form.input :done, :label => 'Done'
+    = form.input :completed_on, :label => 'Completed On'
+    = form.input :active, :label => 'Active'
+  = form.buttons
