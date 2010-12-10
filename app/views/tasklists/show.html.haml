@@ -9,6 +9,14 @@
 %p
   %b Details:
   = @tasklist.details
+%p
+  %b People:
+  - if @tasklist.assigned_users.size > 0
+    %ul
+      - @tasklist.assigned_users.each do |user|
+        %li= user
+  - else
+    No users assigned
 
 %hr/  
 

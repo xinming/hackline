@@ -7,7 +7,7 @@
   %b Body:
   = @task.body
 %p
-  %b User:
+  %b Creator:
   = @task.user
 %p
   %b Done:
@@ -21,6 +21,13 @@
 %p
   %b Completed on:
   = @task.completed_on
+
+- if @task.assigned_users.size > 0
+  %p
+    %b Assigned Users:
+    %ul
+      - @task.assigned_users.each do |user|
+        %li= user
 
 = link_to 'Edit', edit_resource_url(@task)
 \|

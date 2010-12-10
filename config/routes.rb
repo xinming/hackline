@@ -1,13 +1,14 @@
 Hackline::Application.routes.draw do
   
   resources :task_assignments
-
-  resources :tasks do
-    resources :task_assignments
-  end
   
   resources :tasklists do
-    resources :tasks
+    resources :tasks do
+      member do
+        put 'done'
+        put 'undone'
+      end
+    end
   end
 
   resources :projects do

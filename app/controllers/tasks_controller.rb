@@ -11,4 +11,16 @@ class TasksController < InheritedResources::Base
     
     create!
   end
+  
+  def done
+    resource.done = true
+    resource.save
+    redirect_to collection_url, :notice => "Task: #{resource.body} is done!"
+  end
+  
+  def undone
+    resource.done = false
+    resource.save
+    redirect_to collection_url, :notice => "Task: #{resource.body} is undone!"
+  end
 end

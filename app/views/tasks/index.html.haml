@@ -12,6 +12,7 @@
     %th
     %th
     %th
+    %th
 
   - @tasks.each do |task|
     %tr
@@ -21,11 +22,19 @@
       %td= task.deadline
       %td= task.started
       %td= task.completed_on
-      - if task.assigned_users.size > 0
       %td
-        %ul
-          - task.assigned_users.each do |user|
-            %li= user
+        - if task.assigned_users.size > 0
+          %ul
+            - task.assigned_users.each do |user|
+              %li= user
+        - else
+          No users assigned
+
+      - if task.done
+        %td= link_to 'Mark as Undone!', undone_tasklist_task_url(task.tasklist, task), :method => :put   
+      - else
+        %td= link_to 'Mark as Done!', done_tasklist_task_url(task.tasklist, task), :method => :put 
+    
       %td= link_to 'Show', resource_url(task)
       %td= link_to 'Edit', edit_resource_url(task)
       %td= link_to 'Destroy', resource_url(task), :confirm => 'Are you sure?', :method => :delete

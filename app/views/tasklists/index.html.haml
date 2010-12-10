@@ -4,6 +4,7 @@
   %tr
     %th Name
     %th Details
+    %th People in Tasklist
     %th
     %th
     %th
@@ -13,6 +14,13 @@
     %tr
       %td= tasklist.name
       %td= tasklist.details
+      %td
+        - if tasklist.assigned_users.size > 0
+          %ul
+            - tasklist.assigned_users.each do |user|
+              %li= user
+        - else
+          No users assigned
       %td= link_to "(Tasks)", tasklist_tasks_url(tasklist)
       %td= link_to 'Show', resource_url(tasklist)
       %td= link_to 'Edit', edit_resource_url(tasklist)
