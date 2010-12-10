@@ -1,0 +1,20 @@
+Project:
+- name
+- desc
+- deadline
+- active
+
+
+Tasklist
+- name
+- details
+
+task
+- bpody
+- by
+- done
+- started
+- deadline
+-comleted on
+
+comment
