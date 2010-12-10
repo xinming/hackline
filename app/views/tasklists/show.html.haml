@@ -10,6 +10,15 @@
   %b Details:
   = @tasklist.details
 
+%hr/  
+
+%p
+  %b= link_to "Tasks", tasklist_tasks_url(@tasklist)
+  %br/
+  %ul
+    - @tasklist.tasks.each do |task|
+      %li= link_to "#{task.body}", tasklist_task_url(task)
+
 = link_to 'Edit', edit_resource_url(@tasklist)
 \|
 = link_to 'Back', collection_url

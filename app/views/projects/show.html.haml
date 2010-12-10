@@ -26,7 +26,7 @@
   %br/
   %ul
     - @project.tasklists.each do |tasklist|
-      %li= link_to "#{tasklist.name}", project_tasklist_url(tasklist)
+      %li= link_to "#{tasklist.name}", project_tasklist_url(resource, tasklist)
 
 = link_to 'Edit', edit_project_path(@project)
 \|

@@ -1,4 +1,4 @@
-%h1 Listing tasks
+%h1= "Listing Tasks for #{parent.name}"
 
 %table
   %tr
@@ -29,4 +29,4 @@
 %br
 
 = link_to 'New Task', new_resource_url
-= link_to "Back to Tasklist: #{parent.name}", parent_url
+= link_to "Back to Tasklist: #{parent.name}", project_tasklist_url(parent.project, parent)

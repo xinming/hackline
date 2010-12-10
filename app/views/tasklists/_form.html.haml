@@ -1,4 +1,4 @@
-= semantic_form_for @tasklist, :url => collection_url do |form|
+= semantic_form_for @tasklist, :url => params[:action] == 'new' ? collection_url : resource_url(resource) do |form|
   = form.inputs do
     = form.input :project, :label => 'Project'
     = form.input :name, :label => 'Name'

@@ -2,18 +2,18 @@
 
 %table
   %tr
-    %th Project
     %th Name
     %th Details
+    %th
     %th
     %th
     %th
 
   - @tasklists.each do |tasklist|
     %tr
-      %td= tasklist.project
       %td= tasklist.name
       %td= tasklist.details
+      %td= link_to "(Tasks)", tasklist_tasks_url(tasklist)
       %td= link_to 'Show', resource_url(tasklist)
       %td= link_to 'Edit', edit_resource_url(tasklist)
       %td= link_to 'Destroy', resource_url(tasklist), :confirm => 'Are you sure?', :method => :delete
