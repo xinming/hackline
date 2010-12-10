@@ -14,6 +14,13 @@ Hackline::Application.routes.draw do
   end
 
   resources :projects do
+    member do
+      put 'active'
+      put 'inactive'
+      put 'done'
+      put 'undone'
+    end
+    
     resources :tasklists
   end
 
