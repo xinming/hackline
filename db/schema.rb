@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101210205123) do
+ActiveRecord::Schema.define(:version => 20101210210901) do
 
   create_table "favorite_tasks", :force => true do |t|
     t.integer  "user_id"
@@ -53,6 +53,14 @@ ActiveRecord::Schema.define(:version => 20101210205123) do
     t.date     "deadline"
     t.datetime "started"
     t.datetime "completed_on"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "timelines", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "message"
+    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

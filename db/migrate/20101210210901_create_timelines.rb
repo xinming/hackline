@@ -1,0 +1,15 @@
+class CreateTimelines < ActiveRecord::Migration
+  def self.up
+    create_table :timelines do |t|
+      t.references :user
+      t.text :message
+      t.string :link
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :timelines
+  end
+end

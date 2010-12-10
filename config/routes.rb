@@ -1,5 +1,7 @@
 Hackline::Application.routes.draw do
   
+  resources :timelines
+
   # resources :favorite_tasks
   # resources :task_assignments
   

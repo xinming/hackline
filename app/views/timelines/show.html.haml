@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @timeline.user
+%p
+  %b Message:
+  = @timeline.message
+%p
+  %b Link:
+  = @timeline.link
+
+= link_to 'Edit', edit_timeline_path(@timeline)
+\|
+= link_to 'Back', timelines_path
