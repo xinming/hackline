@@ -1,0 +1,15 @@
+#project_container
+  #project_nav
+    - @projects.each do |project|
+      =#link_to ("Add a fox", project, :remote=>true)
+      .project_box{:href=>"/projects/#{project.id}"}
+        %h2.name= project.name
+        %h4.tasks_count= 12
+        %h4.days_count= 15
+  #project_detail
+    - @projects[1].tasklists.each do |tasklist|
+      .tasklist
+        %h3.tasklist_name= tasklist.name
+        - tasklist.tasks.each do |task|
+          %p= task.body
+  %span.clear &nbsp;

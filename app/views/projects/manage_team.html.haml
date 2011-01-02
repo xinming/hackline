@@ -1,0 +1,15 @@
+= form_tag(:method => "post") do 
+  %p 
+    %h2 Current Team
+    - @team.each do |team_member|
+      = check_box_tag "team[user_#{team_member.id}]".to_sym, "1", true
+      = label_tag "team[user_#{team_member.id}]".to_sym, team_member.email
+  %p
+    %h2 Other Users
+    - @remaining_users.each do |other_member|
+      = check_box_tag "team[user_#{other_member.id}]".to_sym, "1", false
+      = label_tag "team[user_#{other_member.id}]".to_sym, other_member.email
+      
+  = submit_tag("Modify")
+  
+= link_to "Back to Project (#{@project.name})", project_path(@project)

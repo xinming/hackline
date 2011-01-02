@@ -1,5 +1,7 @@
 Hackline::Application.routes.draw do
   
+  resources :project_assignments
+
   resources :timelines
 
   # resources :favorite_tasks
@@ -24,6 +26,8 @@ Hackline::Application.routes.draw do
       put 'inactive'
       put 'done'
       put 'undone'
+      get 'manage_team'
+      post 'manage_team'
     end
     
     resources :tasklists

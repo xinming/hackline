@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   has_many :favorite_tasks
   has_many :favorited_tasks, :through => :favorite_tasks, :source => :task
   
+  
+  has_many :project_assignments, :dependent => :destroy
+  
+  
   def to_s
     return self.email
   end

@@ -41,6 +41,7 @@ gem 'rack-cache'
 
 gem 'devise'
 gem 'cancan'
+gem 'jquery-rails'
 
 group :development do
   gem 'rails3-generators'

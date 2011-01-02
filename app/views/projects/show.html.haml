@@ -1,33 +1,14 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @project.name
-%p
-  %b Description:
-  = @project.description
-%p
-  %b Deadline:
-  = @project.deadline
-%p
-  %b Done:
-  = @project.done
-%p
-  %b Completed on:
-  = @project.completed_on
-%p
-  %b Active:
-  = @project.active
-
-%hr/
-
-%p
-  %b Tasklists
-  %br/
-  %ul
-    - @project.tasklists.each do |tasklist|
-      %li= link_to "#{tasklist.name}", project_tasklist_url(resource, tasklist)
-
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+%h1= @project.name
+%div
+  %br
+  - @project.tasklists.each do |tasklist|
+    .tasklist
+      %h4.tasklist_name= tasklist.name
+      - tasklist.tasks.each do |task|
+        %p= task.body
+%div 
+  %h2 Team
+  
+        
+= link_to "Back to Project Index", projects_path
+= link_to "Manage Team" 

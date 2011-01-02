@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @project_assignment.user_id
+%p
+  %b Project:
+  = @project_assignment.project_id
+
+= link_to 'Edit', edit_project_assignment_path(@project_assignment)
+\|
+= link_to 'Back', project_assignments_path
